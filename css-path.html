@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>myplankman</title>
+	<link rel="stylesheet" type="text/css" href="myplankman.css">
+	<style>
+		.men1{
+			  clip-path: polygon(0% 0%, 100% 0%, 95% 110%, 5% 110%);  
+		}
+		img{
+			width: 120px;
+			height: 120px;
+		}
+		.circle{
+			clip-path: circle(50%);
+		}
+		.x{
+			-webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+  			clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+		}
+		.star {
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+		.polygon{
+			clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+		}
+
+		.triangle {
+		  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+		  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+		}
+		.circle2 {
+		  -webkit-clip-path: circle(70% at 70% 20%);
+		  clip-path: circle(80% at 80% 20%);
+		}
+		.ellipse {
+		  -webkit-clip-path: ellipse(50% 35%);
+		  clip-path: ellipse(50% 35%);
+		}
+		.ellipse2 {
+		  -webkit-clip-path: ellipse(50% 65% at 70% 50%);
+		  clip-path: ellipse(50% 65% at 70% 50%);
+		}
+		.inset {
+		  -webkit-clip-path: inset(20% 25% 20% 10%);
+		  clip-path: inset(20% 25% 20% 10%);
+		}
+		.inset2 {
+		  -webkit-clip-path: inset(45% 0% 33% 10% round 10px);
+		  clip-path: inset(35% 0% 33% 5% round 10px);
+		}
+		
+		@keyframes magic {
+		  0% {
+		    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		  }
+		  20% {
+		    -webkit-clip-path: polygon(28% 0, 73% 0, 100% 100%, 0% 100%);
+		    clip-path: polygon(28% 0, 73% 0, 100% 100%, 0% 100%);
+		  }
+		  40% {
+		    -webkit-clip-path: polygon(0 0, 100% 72%, 100% 100%, 0 35%);
+		    clip-path: polygon(0 0, 100% 72%, 100% 100%, 0 35%);
+		  }
+		  60% {
+		    -webkit-clip-path: polygon(50% 0, 50% 0, 100% 100%, 0% 100%);
+		    clip-path: polygon(50% 0, 50% 0, 100% 100%, 0% 100%);
+		  }
+		  80% {
+		    -webkit-clip-path: polygon(0 70%, 100% 0, 100% 32%, 0 100%);
+		    clip-path: polygon(0 70%, 100% 0, 100% 32%, 0 100%);
+		  }
+		  100% {
+		    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		  }
+		}
+		.animate{
+			animation: magic 4s infinite;
+		}
+
+</style>
+</head>
+<body>
+	
+	<img src="a.jpg" class="img1">
+	<img src="a.jpg" class="polygon">
+	<img src="a.jpg" class="x">
+	<img src="a.jpg" class="circle">
+	<img src="a.jpg" class="triangle">
+	<img src="a.jpg" class="star">
+	<img src="a.jpg" class="circle2">
+	<img src="a.jpg" class="ellipse">
+	<img src="a.jpg" class="ellipse2">
+	<img src="a.jpg" class="inset">
+	<img src="a.jpg" class="inset2">
+	<div class="trigger">
+		<img src="a.jpg" class="animate">
+	</div>
+	<button type="button" class="trigger-btn">start</button>
+
+	<script>
+		let toAnimate = document.querySelector('.trigger');
+		let button = document.querySelector('.trigger-btn');
+
+		button.addEventListener('click', function() {
+		  if (toAnimate.classList.contains('animate')) {
+		    toAnimate.classList.remove('animate');
+		    this.innerText = 'Start';
+		  } else {
+		    toAnimate.classList.add('animate');
+		    this.innerText = 'Stop';
+		  }
+		});
+	</script>
+</body>
+</html>
